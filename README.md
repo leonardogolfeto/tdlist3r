@@ -1,27 +1,16 @@
-# TodoFront
+## BRAVI - TO DO LIST
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+### Prerequisites
 
-## Development server
+* Maven
+* Docker
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Steps to execute
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* 1 - Open your preferred shell
+* 2 - Go to the directory "back" inside the application
+* 3 - Run the command "mvn clean install"
+* 4 - Go to the "front" directory
+* 5 - Run the command "docker build -t com.bravi.todo/front ."
+* 6 - Go to the root directory and run "docker-compose up" and wait all services start
+* 7 - Access the application by http://localhost:8888 in on chrome navigator

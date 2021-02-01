@@ -43,15 +43,20 @@ export class BoardComponent implements OnInit {
     if(cardToEdit == null) {
       
         this.dialog.open(InsertCardComponent).afterClosed().subscribe(result => {
+          
+          if(result) {
           result.boardName = this.boardName;
           this.http.post("http://localhost:8080/todo/api/v1/todo/", result).subscribe(data => {this.cards.push(data); this.snackbar.openFromComponent(OperationSuccessfullSnakBar, {
             duration: 2 * 1000
           })})
           console.log(result)
+        }
         });
 
     } else {
         this.dialog.open(InsertCardComponent, {data: cardToEdit}).afterClosed().subscribe(result => {
+          
+          if(result) {
           let newObject = cardToEdit
           newObject.description = result.description;
           newObject.completionDate = result.completionDate;
@@ -60,6 +65,7 @@ export class BoardComponent implements OnInit {
           this.snackbar.openFromComponent(OperationSuccessfullSnakBar, {
             duration: 2 * 1000,
           }))
+        }
         });
         
     }    
