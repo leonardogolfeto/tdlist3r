@@ -35,15 +35,15 @@ public class TodoEntity implements TodoProjection {
     private String boardName;
 
     @Setter
-    @Column(name="DESCRIPTION", nullable = false)
+    @Column(name="DESCRIPTION")
     private String description;
 
     @Setter
-    @Column(name="COMPLETION_DATE", nullable = false)
+    @Column(name="COMPLETION_DATE")
     private LocalDate completionDate;
 
     @Setter
-    @Column(name="COMPLETION", nullable = false)
+    @Column(name="COMPLETION")
     private Boolean completed = false;
 
     @Setter
