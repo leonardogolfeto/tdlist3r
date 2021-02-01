@@ -1,0 +1,27 @@
+
+<mat-card [ngClass]="{'completed': card.completed, 'card': true}">
+
+        <mat-card-header>
+            <mat-card-title class="md-card-title"></mat-card-title>
+        </mat-card-header>
+                
+        <mat-card-content>
+            <div class="card-text-content">
+              <label>{{card.description}}</label>
+            </div>
+        </mat-card-content>
+        
+        <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
+            <a mat-icon-button (click)="markCompleted(card)">
+                <mat-icon>done_outline</mat-icon>
+            </a>
+            <a mat-icon-button (click)="edit(card)">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a mat-icon-button (click)="delete(card)">
+            <mat-icon>delete_forever</mat-icon>
+        </a>
+        </mat-card-actions>        
+
+</mat-card>
+

@@ -1,0 +1,39 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: todo
+    volumes:
+      - todo:/var/lib/mysql
+  registry:
+    image: com.bravi.todo/registry
+    depends_on:
+      - db
+    restart: on-failure
+  gateway:
+    image: com.bravi.todo/gateway
+    ports:
+      - 8080:8080
+    restart: on-failure
+    depends_on:
+      - db
+      - registry
+  main-engine:
+    image: com.bravi.todo/main-engine
+    restart: on-failure
+    depends_on:
+      - db
+      - registry
+      - gateway
+  front:
+    image: com.bravi.todo/front
+    ports:
+    - 8888:80
+volumes:
+  todo:

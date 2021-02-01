@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Add to do</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-form-field appearance="outline" class="description">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="card.description"></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline" class="input-field">
+    <mat-label>Hours Spent</mat-label>
+    <input type="number" matInput [(ngModel)]="card.hoursSpent">
+  </mat-form-field>
+  
+  <mat-form-field appearance="outline" class="input-field">
+    <mat-label>End Date</mat-label>
+    <input matInput [matDatepicker]="datepicker" [(ngModel)]="card.completionDate">
+    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+    <mat-datepicker #datepicker>
+      <mat-datepicker-actions>
+        <button mat-button matDatepickerCancel>Cancel</button>
+        <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+  </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="card" cdkFocusInitial>Save</button>
+  <button mat-button cdkFocusInitial>Cancel</button>
+</mat-dialog-actions>

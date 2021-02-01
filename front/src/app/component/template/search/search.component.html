@@ -1,0 +1,18 @@
+
+<mat-card class="search mat-elevation-z10" align="center" >
+    <mat-card-title align="center"><span class="blue">TD</span> LIST<span class="blue">3</span>R</mat-card-title>
+    <mat-card-subtitle align="center">Dont login, just use a URL</mat-card-subtitle>
+    <mat-card-content align="center">
+        <mat-form-field class="example-full-width">
+            <mat-label width="200px">
+                Name of your board
+            </mat-label>
+            <input  matInput placeholder="Ex. My todo list" [(ngModel)]="boardName">
+        </mat-form-field>
+        <mat-card-actions align="center">
+            <button mat-stroked-button color="primary" (click)="go()">GO!</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>    
+
+
